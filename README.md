@@ -178,4 +178,4 @@ SpendWise aims to make expense tracking **simple, visual, and practical for stud
 
 ## Author
 
-**Made by Riddhima Utreja**
+Made by Riddhima Utreja
