@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Sign in and reach the SpendWise dashboard",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": ["opening experience", "name and mobile sign-in", "OTP verification", "authenticated dashboard"],
+    "description": "Verifies the new opening flow leads through local name and mobile OTP verification into the app.",
+    "steps": ["Open SpendWise", "Enter the name \"Riddhima\"", "Enter a valid 10-digit mobile number", "Click \"Get verification code\"", "Enter the displayed 6-digit demo verification code", "Click \"Enter SpendWise\""],
+    "expected": "The sign-in flow completes and the SpendWise main website is visible with the signed-in user's name."
+  },
+  {
+    "name": "Analyze sample data after sign-in",
+    "viewport": "desktop",
+    "covers": ["sample data workflow", "expense calculations", "category analysis", "dashboard insights"],
+    "description": "Verifies the primary analysis experience still populates the dashboard after authentication.",
+    "setup": ["Sign in as Riddhima with a valid 10-digit mobile number using the displayed demo verification code"],
+    "steps": ["Click \"Try sample data\"", "Review the Overview and Insights sections"],
+    "expected": "Calculated totals, transaction count, top category, category chart, spending patterns, and smart insights are visible."
+  },
+  {
+    "name": "Add, edit, delete, and persist a manual expense",
+    "viewport": "desktop",
+    "covers": ["manual expense creation", "expense editing", "expense deletion", "browser persistence"],
+    "setup": ["Sign in as Riddhima and load sample data"],
+    "description": "Verifies transaction management remains durable after the new sign-in layer.",
+    "steps": ["Add an expense named \"Library print\" for ₹50", "Edit the expense to ₹75", "Delete the expense and confirm", "Refresh the page"],
+    "expected": "The expense can be created and edited, disappears after confirmed deletion, and remains absent after refresh."
+  },
+  {
+    "name": "Use search and category filtering on mobile",
+    "viewport": "mobile",
+    "covers": ["Expenses navigation", "search", "category filtering", "responsive transaction table"],
+    "setup": ["Sign in as Riddhima and load sample data"],
+    "description": "Verifies transaction discovery controls remain usable on a small screen.",
+    "steps": ["Open Expenses", "Search for \"Metro\"", "Select \"Transport\""],
+    "expected": "Only matching Transport transactions remain visible and the table controls remain usable on mobile."
+  },
+  {
+    "name": "Set a budget and export expense data",
+    "viewport": "desktop",
+    "covers": ["monthly budget", "budget progress", "remaining or exceeded status", "CSV export"],
+    "setup": ["Sign in as Riddhima and load sample data"],
+    "description": "Verifies core budgeting and export actions remain available after authentication.",
+    "steps": ["Enter a monthly budget of 5000", "Review the budget percentage and status", "Click \"Export CSV\""],
+    "expected": "The budget card shows calculated usage and status, and an expense CSV download is initiated."
+  }
+]
